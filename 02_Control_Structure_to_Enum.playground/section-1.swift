@@ -15,10 +15,11 @@ else {
     println("anything else")
 }
 
-if name is Int {
+let a: Any = 5.0
+if a is Int {
     println("Int")
 }
-else if name is String {
+else if a is String {
     println("String")
 }
 else {
@@ -123,17 +124,17 @@ applyFunction(list, incrementFunction)
 
 // Summe aller Zahlen zw. 1 und 100, die Vielfach von 4 sind
 
-(1...100)
-    .filter{n in n % 4 == 0}
-    .reduce(0) {a, b in a+b}
-
+let range: Range<Int> = 1...100
+let mult4 = filter(range){n in n % 4 == 0}
+              .reduce(0) {a, b in a+b}
+mult4
 
 
 // enum
 
 enum CourseType {
-    case Mandatory,
-    case Optional,
+    case Mandatory
+    case Optional
     case NotSureWillHaveToCheck
 }
 
@@ -149,6 +150,5 @@ func sayIt(t: CourseType) {
 }
 
 sayIt(CourseType.Mandatory)
-CourseType.Mandatory.rawValue
 
 
