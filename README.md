@@ -1,8 +1,26 @@
 # Swift_iOS_Workshop
 Patrick Jayet - March 2015
 
-Material of the Swift/iOS Workshop FHNW
+Material of the Swift/iOS Workshop FHNW.
 
+# Material
+## Course 1
+ - The course material can be found in the following 4 playground files
+   - 01_Types_to_Optionals
+   - 02_Control_Structure_to_Enum
+   - 03_Classes_Property_Protocol
+   - 04_Extension_Generics
+ - Exercices:
+   - The two playground files Exercise_1 and Exercise_2. 
+   
+## Course 2
+ - See slides iOS-Workshop-2015-iOS-Teil2.pdf in the folder slides
+ - Exercise: check out the branch Ex3
+ 
+## Course 3
+ - See slides iOS-Workshop-2015-iOS-Teil3.pdf in the folder slides
+ - Exercise: continuation of exercise Ex3
+ - Solution: check out branch Solution_Ex3
 
 # References
 
