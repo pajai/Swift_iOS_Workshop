@@ -12,7 +12,7 @@ extension Int {
 }
 
 
-5.times{ println("hallo") }
+5.times{ print("hallo") }
 
 
 // extension properties
@@ -33,7 +33,7 @@ let marathon = 42.km + 195.m
 // Missing method on String? No problem, add it
 
 extension String {
-    var length: Int { return countElements(self) }
+    var length: Int { return self.characters.count }
 }
 
 "hallo".length
@@ -47,7 +47,7 @@ extension String {
 
 // Generics Parameter für Methoden
 
-func print<T: Printable>(t: T) {
+func print<T: CustomStringConvertible>(t: T) {
     print(t.description)
 }
 
@@ -64,7 +64,7 @@ class Stack<T> {
     }
     
     func pop() -> T? {
-        let n = countElements(values)
+        let n = values.count
         if n > 0 {
             let t: T = values[n-1]
             values.removeAtIndex(n-1)
@@ -74,7 +74,7 @@ class Stack<T> {
     }
     
     func isEmpty() -> Bool {
-        return countElements(values) == 0
+        return values.count == 0
     }
 }
 
@@ -83,6 +83,6 @@ let s = Stack<Int>()
 s.push(5)
 s.push(10)
 while (!s.isEmpty()) {
-    println(s.pop())
+    print(s.pop())
 }
 

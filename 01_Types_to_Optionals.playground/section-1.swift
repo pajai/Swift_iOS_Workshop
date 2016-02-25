@@ -4,7 +4,7 @@
 // *** Typen
 
 let str = "hello world"
-println(str)
+print(str)
 
 let anInt = 42
 
@@ -49,7 +49,7 @@ let anIntConstant = 10
 
 var counter = 0
 counter++
-println("I am a counter and my value is \(counter)")
+print("I am a counter and my value is \(counter)")
 
 
 // *** Kollektionen
@@ -66,7 +66,7 @@ colours.append("black")
 colours += ["white"]
 
 colours.removeRange(0...1)
-countElements(colours)
+colours.count
 colours.isEmpty
 colours[0] = "I don't like violet"
 colours[0]
@@ -75,7 +75,7 @@ let mix = names + colours
 let subArray = mix[0...3]
 
 for item in subArray {
-    println("I am an item \(item)")
+    print("I am an item \(item)")
 }
 
 
@@ -96,7 +96,7 @@ namesToCity["john"] = "windisch"
 namesToCity["helmut"] = "nowhere"
 
 for (name, city) in namesToCity {
-    println("my name is \(name) and I live in \(city)")
+    print("my name is \(name) and I live in \(city)")
 }
 
 
@@ -104,10 +104,10 @@ let aDict: [String: Int] = ["john": 21, "helen": 18]
 aDict.count
 
 for key in aDict.keys {
-    println("I am a key \(key)")
+    print("I am a key \(key)")
 }
 for value in aDict.values {
-    println("I am a value \(value)")
+    print("I am a value \(value)")
 }
 
 
@@ -156,15 +156,15 @@ func easierAgeForName(name: String, dict: [String: Int]) -> Int? {
     return result
 }
 
-let age = ageForName("helen", aDict)
-let age2 = ageForName("not there", aDict)
+let age = ageForName("helen", dict: aDict)
+let age2 = ageForName("not there", dict: aDict)
 
 // Nicht erlaubt
 //let newAge = age + 1
 
 if let sureAge = age {
     let newAge = sureAge + 1
-    println("your new age is \(newAge)")
+    print("your new age is \(newAge)")
 }
 
 let newAge = age! + 1
@@ -175,5 +175,5 @@ let anotherAge = age2?.successor()
 // String interpolation
 
 let someName = "john"
-let someStr = "my name is \(someName), and there are \(countElements(someName)) letters in it"
+let someStr = "my name is \(someName), and there are \(someName.characters.count) letters in it"
 
