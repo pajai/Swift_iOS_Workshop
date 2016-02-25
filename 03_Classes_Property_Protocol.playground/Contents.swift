@@ -1,7 +1,8 @@
 // Playground - noun: a place where people can play
 
 
-// Protokoll- und Klassendefinition
+//: # Classes, Property, Protocol
+//: ## Protokoll- und Klassendefinition
 
 protocol Animal {
     var name: String { get set }
@@ -57,7 +58,7 @@ moves
 animals[0].name
 
 
-// Statische Methoden
+//: ## Statische Methoden
 
 class Chiwawa {
     class func stayInHandbag() -> String {
@@ -68,7 +69,7 @@ class Chiwawa {
 Chiwawa.stayInHandbag()
 
 
-// willSet/didSet
+//: ## willSet/didSet
 
 class Bulldog: Dog {
     var isHappy: Bool = true
@@ -83,7 +84,7 @@ let b = Bulldog(name: "Toby")
 b.name = "Rusty"
 
 
-// berechnete Properties
+//: ## Berechnete Properties
 
 // afghanischer Windhund
 class AfghanHound: Dog {
@@ -103,3 +104,6 @@ class AfghanHound: Dog {
 
 let dog = AfghanHound(name: "Lumpi", age: 5)
 dog.dogAge
+
+//: [Zur nächsten Seite](@next)
+

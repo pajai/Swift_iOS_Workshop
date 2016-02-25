@@ -1,7 +1,12 @@
 // Playground - noun: a place where people can play
 
 
-// if
+/*:
+
+# Control Structure to Enum
+## if
+
+*/
 
 let name = "john"
 
@@ -27,7 +32,7 @@ else {
 }
 
 
-// if mit Zuweisung
+//: ## if mit Zuweisung
 
 func maybeString(nb: Int) -> String? {
     return nb % 2 == 0 ? "gerade" : nil
@@ -39,7 +44,7 @@ if let sureStr = str {
 }
 
 
-// for
+//: ## for
 
 for name in ["john", "helmut"] {
     print("my name is \(name)")
@@ -53,7 +58,7 @@ for i in 0..<10 {
     print("I am some counter. My value is \(i)")
 }
 
-// switch
+//: ## switch
 
 let n = 42
 switch(n) {
@@ -66,7 +71,7 @@ default:
 }
 
 
-// while & do while
+//: ## while & do while
 
 var i = 0
 while i < 10 {
@@ -81,7 +86,7 @@ repeat {
 } while j < 10
 
 
-// func
+//: ## func
 
 func inc(a: Int) -> Int {
     return a+1
@@ -99,7 +104,7 @@ func factorial(n: Int) -> Int {
 let result = factorial(10)
 
 
-// closures
+//: ## closures
 
 let incrementFunction = {number in number + 1}
 
@@ -117,7 +122,7 @@ let list = [10, 42, 111]
 applyFunction(list, f: incrementFunction)
 
 
-// map, filter, reduce
+//: ## map, filter, reduce
 
 (1...10).map(incrementFunction)
 (1...10).map {n in n + 1}
@@ -131,7 +136,7 @@ let mult4 = range
 mult4
 
 
-// enum
+//: ## enum
 
 enum CourseType {
     case Mandatory
@@ -151,4 +156,6 @@ func sayIt(t: CourseType) {
 }
 
 sayIt(CourseType.Mandatory)
+
+//: [Zur nächsten Seite](@next)
 

@@ -1,7 +1,8 @@
 // Playground - noun: a place where people can play
 
 
-// *** Typen
+//: # Types to Optionals
+//: ## Typen
 
 let str = "hello world"
 print(str)
@@ -17,7 +18,7 @@ let anotherDouble: Double = 3.14
 let aThirdDouble: Double = 5
 
 
-// Typinferenz
+//: ## Typinferenz
 
 let aString = "hi there"
 aString.hasPrefix("hi")
@@ -33,7 +34,7 @@ var aStringVar = "hi "
 aStringVar + "john"
 
 
-// *** Mutierbare und nicht mutierbare Variablen
+//: ## Mutierbare und nicht mutierbare Variablen
 let aConstant = "hello"
 
 // Nicht erlaubt, ich darf aConstant nicht ändern
@@ -52,9 +53,8 @@ counter++
 print("I am a counter and my value is \(counter)")
 
 
-// *** Kollektionen
-
-// Array
+//: ## Kollektionen
+//: ### Array
 
 let names = ["john", "helen", "helmut"]
 
@@ -79,7 +79,7 @@ for item in subArray {
 }
 
 
-// Dictionary
+//: ### Dictionary
 
 let namesToColours = ["john": "blue", "alan": "green", "helen": "orange"]
 
@@ -111,7 +111,7 @@ for value in aDict.values {
 }
 
 
-// Tuple
+//: ### Tuple
 
 let aTuple = ("alan", 21)
 aTuple.0
@@ -131,7 +131,7 @@ aThirdTuple.1
 
 
 
-// Optional
+//: ## Optional
 
 var name: String = "patrik"
 
@@ -172,8 +172,10 @@ age!.successor()
 let anotherAge = age2?.successor()
 
 
-// String interpolation
+//: ## String interpolation
 
 let someName = "john"
 let someStr = "my name is \(someName), and there are \(someName.characters.count) letters in it"
 
+
+//: [Zur nächsten Seite](@next)

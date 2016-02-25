@@ -1,11 +1,12 @@
 // Playground - noun: a place where people can play
 
 
-// *** Extension
+//: # Extension & Generics
+//: ## Bestehenden Typ erweitern
 
 extension Int {
     func times(f: () -> ()) {
-        for i in 0..<self {
+        for _ in 0..<self {
             f()
         }
     }
@@ -15,7 +16,7 @@ extension Int {
 5.times{ print("hallo") }
 
 
-// extension properties
+//: ### Auch mit Properties
 
 extension Double {
     var km: Double { return 1000 * self }
@@ -30,7 +31,7 @@ let marathon = 42.km + 195.m
 27.inch
 
 
-// Missing method on String? No problem, add it
+//: Es fehlt eine praktische Methode auf String? Kein Problem, wir können sie selber definieren.
 
 extension String {
     var length: Int { return self.characters.count }
@@ -39,22 +40,26 @@ extension String {
 "hallo".length
 
 
-// *** Generics
+//: ## Generics
+//: Analog zu den Generics in Java.
 
 
-// Basically similar to Java
+//: ### Generics Parameter für Methoden
 
-
-// Generics Parameter für Methoden
-
-func print<T: CustomStringConvertible>(t: T) {
+func myprint<T: CustomStringConvertible>(t: T) {
     print(t.description)
 }
 
-print(5.0)
+myprint(5.0)
 
 
-// Und für Klassen
+class Foo{}
+
+// Geht nicht, warum?
+//myprint(Foo())
+
+
+//: ### Und für Klassen
 
 class Stack<T> {
     private var values: [T] = []
@@ -85,4 +90,3 @@ s.push(10)
 while (!s.isEmpty()) {
     print(s.pop())
 }
-
