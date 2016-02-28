@@ -1,5 +1,5 @@
 # Swift_iOS_Workshop
-Patrick Jayet - March 2015
+Patrick Jayet - Februar 2016
 
 Material of the Swift/iOS Workshop FHNW.
 
@@ -30,4 +30,3 @@ Material of the Swift/iOS Workshop FHNW.
   - The Swift Programming Language <https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language>
   - Apple Inc. “The Swift Programming Language” <https://itunes.apple.com/us/book/swift-programming-language/id881256329>
   - What I like in Swift – And What I Do Not, Patrick Jayet, <http://blog.zuehlke.com/en/what-i-like-in-swift-and-what-i-do-not>
-
