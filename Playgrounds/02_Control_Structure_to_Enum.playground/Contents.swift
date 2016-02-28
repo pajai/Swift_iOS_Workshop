@@ -111,11 +111,11 @@ let incrementFunction = {number in number + 1}
 incrementFunction(42)
 
 func applyFunction(list: [Int], f: Int -> Int) -> [Int] {
-    var list: [Int] = []
+    var newList: [Int] = []
     for nb in list {
-        list.append(f(nb))
+        newList.append(f(nb))
     }
-    return list
+    return newList
 }
 
 let list = [10, 42, 111]
