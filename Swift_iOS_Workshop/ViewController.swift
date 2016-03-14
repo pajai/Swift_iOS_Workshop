@@ -30,8 +30,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
 
         locationManager.delegate = self
+        checkPermission()
     }
     
     private func checkPermission() {
@@ -83,7 +90,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func performServerRequest() {
-        // TODO
+        if let location = self.location {
+            let longitude = location.coordinate.longitude
+            let latitude = location.coordinate.latitude
+            self.weatherRequest = WeatherRequest(latitude: latitude, longitude: longitude)
+            weatherRequest?.successBlock = { weatherData in
+                NSLog("Received a weather data: %@", weatherData)
+                
+                self.cityLabel.text =    weatherData.city
+                self.weatherLabel.text = weatherData.weather
+                self.tempLabel.text =    weatherData.formattedTemp
+                self.minTempLabel.text = weatherData.formattedMinTemp
+                self.maxTempLabel.text = weatherData.formattedMaxTemp
+                self.humidityLabel.text = weatherData.formattedHumidity
+                
+                WeatherHelper.loadIcon(weatherData.icon, imageView: self.iconImageView)
+            }
+            weatherRequest?.failureBlock = { error in
+                NSLog("An error occured while calling the weather API: \(error)")
+            }
+            weatherRequest?.performRequest()
+        }
     }
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -94,7 +121,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     @IBAction func reloadPressed(sender: AnyObject) {
-        // TODO
+        self.location = nil
+        startLocationRequest()
     }
 }
 
