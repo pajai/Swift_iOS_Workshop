@@ -105,5 +105,26 @@ class AfghanHound: Dog {
 let dog = AfghanHound(name: "Lumpi", age: 5)
 dog.dogAge
 
+//: Sichtbarkeit
+
+class Foobar {
+    
+    func someInternalMethod() {
+        print("internal")
+        
+        somePrivateMethod()
+    }
+    
+    private func somePrivateMethod() {
+        print("private")
+    }
+    
+    public func somePublicMethod() {
+        print("public")
+    }
+    
+}
+
+
 //: [Zur nächsten Seite](@next)
 
