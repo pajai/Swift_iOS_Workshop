@@ -1,7 +1,7 @@
 /*:
 
 ## Übung 3
-#Wetter-App
+# Wetter-App
 
 Das Ziel von dieser Übung ist es, eine kleine Wetter-App zu programmieren.
 
@@ -11,7 +11,7 @@ Gegeben ist ein App-Gerüst mit folgenden Komponenten/Klassen:
 
 - Ein Gerüst vom Hauptcontroller `ViewController`. Dieser Controller wird im Rahmen dieser Übung vervollständigt.
 
-- Eine Klasse `WeatherRequest`, die die Abfrage zum Server von [OpenWeatherMap.org](http://openweathermap.org) übernimmt und ein Modellobjekt mit dem Resultat der Abfrage zurückliefert.
+- Eine Klasse `WeatherRequest`, die die Abfrage zum Server von [OpenWeatherMap.org](http://openweathermap.org) übernimmt und ein Modellobjekt mit dem Resultat (Wetterinformationen) zurückliefert.
 
 - Die erwähnte Modellklasse `WeatherData`
 
@@ -30,12 +30,12 @@ A. In Teil A wollen wir das Projekt aufsetzen und die `CocoaPods` Abhängigkeite
     $ sudo gem install cocoapods
     
 
-- Nun können wir das Projekt aufsetzen. Im Hauptverzeichnis vom Projekt können wir den folgenden Befehl ausführen:
+- Nun können wir das Projekt aufsetzen. Im Hauptverzeichnis des Projektes können wir den folgenden Befehl ausführen:
 
     $ pod install
 
 
-- Wenn man ein Projekt mit CocoaPods einrichtet, muss man jeweils das Workspace-File (hier `Swift_iOS_Workshop.xcworkspace`) und nicht das Projekt-File (mit der Endung `.xcodeproj`) aufmachen. Nun öffnen wir das erwähnte Workspace-File.
+- Wichtig: Wenn man ein Projekt mit CocoaPods einrichtet, muss man jeweils das Workspace-File (hier `Swift_iOS_Workshop.xcworkspace`) und nicht das Projekt-File (mit der Endung `.xcodeproj`) aufmachen. Nun öffnen wir das erwähnte Workspace-File.
 
 
 ----
@@ -53,7 +53,7 @@ B) In Teil B wollen wir die UI-Elemente und Klassen vom Storyboard mit den entsp
 
 C) Die Standortabfrage mit CoreLocation ist schon implementiert. Wir müssen nur in der passende Lifecycle-Methode von `ViewController` den Prozess anstossen (Methode `checkPermission` aufrufen).
   
-Tipp: wir wollen `checkPermission` aufrufen, wenn der Controller bereits erschienen ist. Um Welche Controller-Lifecycle-Methode handelt es sich hier?
+Tipp: wir wollen `checkPermission` aufrufen, wenn der Controller erscheint. Um Welche Controller-Lifecycle-Methode(n) handelt es sich hier?
 
 
 ----
@@ -61,9 +61,9 @@ Tipp: wir wollen `checkPermission` aufrufen, wenn der Controller bereits erschie
 
 D) Nach Erhalt des Standortes wird die Methode `performServerRequest` aufgerufen (lokal sollte den Standort in self.location gespeichert werden). Nun wollen wir diese Methode `performServerRequest` vervollständigen.
 
-- In dieser Methode wollen wir eine Instanz von WeatherRequest erzeugen und in einer Instanzvariablen in `ViewController` speichern (dies ist wichtig, damit diese Instanz nach Beendigung der Methode vom Speicher nicht geräumt wird).
+- In dieser Methode wollen wir eine Instanz von WeatherRequest erzeugen und in eine Property in `ViewController` speichern (dies ist wichtig, damit diese Instanz nach Beendigung der Methode vom Speicher nicht geräumt wird).
 
-- Zunächst wollen wir das Success-Block erzeugen und zuweisen. Dieser Code wird bei Erfolg der Server-Abfrage mit einer Instanz vom Modell `WeatherData` aufgerufen.
+- Zunächst wollen wir das Success-Block erzeugen und zuweisen. Dieser Code wird bei Erfolg der Server-Abfrage mit einer Instanz von `WeatherData` aufgerufen.
   
 Tipp: Wir können dieses Success-Block folgendermassen erzeugen und zuweisen:
 
@@ -71,7 +71,7 @@ Tipp: Wir können dieses Success-Block folgendermassen erzeugen und zuweisen:
       // etwas mit weatherData machen
     }
 
-Nun wollen wir die Daten aus weatherData lesen und die verschiedene Labels damit anpassen.
+Nun wollen wir die Daten aus `weatherData` lesen und die verschiedene Labels damit updaten (u.a. Standort, Wetterlage, Temperatur).
   
 Tipp: die Property `text` von UILabel enthält den Text vom Label (kann gelesen und geschrieben werden).
 
